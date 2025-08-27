@@ -49,6 +49,11 @@ public class AuthController {
         String response = userService.initiatePasswordReset(email);
         return ResponseEntity.ok(response);
     }
+    
+    @GetMapping("/test")
+public ResponseEntity<String> test() {
+    return ResponseEntity.ok("Backend is working fine!");
+}
 
     @PostMapping("/reset-password")
     public ResponseEntity<String> resetPassword(@RequestParam String token, @RequestParam String newPassword) {
